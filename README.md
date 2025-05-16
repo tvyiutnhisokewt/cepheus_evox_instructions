@@ -6,7 +6,7 @@ This build uses retrofit dynamic partitioning, and a custom (OrangeFox) recovery
 
 If you're already on the recommended OrangeFox recovery or other recoveries with retrofit metadata support, you can skip this instruction.
 
-tl;dr: [Recovery image](https://raw.githubusercontent.com/tvyiutnhisokewt/cepheus_evox_instructions/refs/heads/main/recovery_ofox_cepheus.img), [Recovery zip](https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download)
+tl;dr: [Recommended recovery zip](https://sourceforge.net/projects/cepheus/files/recovery/OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip/download)
 
 * [Clean flashing](#clean-flashing)
 * [Updating from an older Official Evolution X build](#updating-from-an-older-official-evolution-x-build)
@@ -18,15 +18,21 @@ _Users coming from MIUI or other ROMs **MUST** do this to install Evolution X._
 
 1. Hold Power button + Volume down until device reboots. You should see the fastboot logo.
 
-2. Flash the recovery from fastboot:
+2. Flash the Evolution X recovery from fastboot:
 
-    `fastboot flash recovery recovery_ofox_cepheus.img`
+    `fastboot flash recovery recovery.img`
 
 3. Reboot to recovery: type:
 
     `fastboot reboot`
 
     then hold the Volume up button until you see the OrangeFox logo.
+
+    While in Evolution X recovery, go to Apply update > sideload the OrangeFox recovery zip:
+
+    `adb sideload OrangeFox-cepheus-A14RetrofitMetadata-28012024.zip`
+
+    The device will reboot to recovery itself.
 
 4. Go to Wipe, tick on all boxes **EXCEPT** "USB-Storage", then swipe to wipe.
 
@@ -37,6 +43,8 @@ _Users coming from MIUI or other ROMs **MUST** do this to install Evolution X._
 6. Reboot System and #KeepEvolving
 
 ## Updating from an older Official Evolution X build
+
+_It is recommended to backup your data before proceeding (older builds are userdebug, this build is user, which you might need to wipe the device)._
 
 1. Hold Power button > Reboot > Recovery
 
@@ -65,4 +73,3 @@ _Users coming from MIUI or other ROMs **MUST** do this to install Evolution X._
     `adb sideload EvolutionX-...-cepheus-...-Official.zip`
 
 4. Reboot System and #KeepEvolving
-
